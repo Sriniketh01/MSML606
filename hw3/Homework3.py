@@ -4,7 +4,7 @@ import time
 import tracemalloc
 import matplotlib.pyplot as plt
 
-# --- Definition of TreeNode and HomeWork3 classes --- #
+# --- Defining Treenode and Hoework 3 classes --- #
 
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -26,15 +26,17 @@ class HomeWork3:
         queue = [root]
         while nodes and queue:
             current = queue.pop(0)
-            # Left child
+            # for Left child
             if nodes:
+                
                 left_val = nodes.pop(0)
                 if left_val != "None":
                     left_node = TreeNode(int(left_val))
                     current.left = left_node
                     queue.append(left_node)
-            # Right child
+            # for the Right child
             if nodes:
+                
                 right_val = nodes.pop(0)
                 if right_val != "None":
                     right_node = TreeNode(int(right_val))
@@ -42,7 +44,7 @@ class HomeWork3:
                     queue.append(right_node)
         return root
 
-    # Problem 2: In-Order Traversal (Recursive)
+    # Problem 2: In-Order Traversal (Recursively)
     def inOrderTraversalRecursive(self, head: TreeNode) -> list:
         def inorder(node):
             if not node:
@@ -50,7 +52,7 @@ class HomeWork3:
             return inorder(node.left) + [node.val] + inorder(node.right)
         return inorder(head)
 
-    # Problem 2: In-Order Traversal (Iterative)
+    # Problem 2: In-Order Traversal (Iteratively)
     def inOrderTraversalIterative(self, head: TreeNode) -> list:
         stack = []
         current = head
